@@ -1,12 +1,11 @@
 class Solution:
-    def isPalindrome(self, x: int) -> bool:
-        xStr = str(x)
+    def isPalindrome(self, num: int) -> bool:
+        numStr = str(num)
 
-        for i in range(0, len(xStr)):
-            if xStr[i] != xStr[-(i+1)]:
+        for i, digit in enumerate(numStr):
+            if digit != numStr[-(i+1)]:
                 return False
 
-        # Qua il ciclo è finito!
         return True
 
 

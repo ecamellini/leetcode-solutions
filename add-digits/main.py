@@ -14,5 +14,5 @@ class Solution:
 
 
 sol = Solution()
-assert (sol.addDigits(38) == 2)
+assert sol.addDigits(38) == 2
 print("All tests have passed")

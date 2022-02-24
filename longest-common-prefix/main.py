@@ -7,10 +7,10 @@ class Solution:
             return ""
 
         longestPrefix = min(strs, key=len)
-        for str in strs:
-            # maxLengthOfCommonPrefix = min(len(longestPrefix), len(str))
-            for i in range(len(longestPrefix)):
-                if longestPrefix[i] == str[i]:
+
+        for word in strs:
+            for i, char in enumerate(longestPrefix):
+                if char == word[i]:
                     continue
                 else:
                     longestPrefix = longestPrefix[0:i]
@@ -26,8 +26,8 @@ class Solution:
         while len(longestPrefix) > 0:
 
             isItReallyACommonPrefix = True
-            for s in strs:
-                if not s.startswith(longestPrefix):
+            for word in strs:
+                if not word.startswith(longestPrefix):
                     isItReallyACommonPrefix = False
                     break
 
@@ -36,7 +36,6 @@ class Solution:
             else:
                 longestPrefix = longestPrefix[:-1]
 
-        # No prefix
         return ""
 
 
